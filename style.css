@@ -182,7 +182,7 @@ button {
 #garden {
     position: relative;
     overflow: hidden;
-    cursor: crosshair;
+    cursor: pointer;
     touch-action: manipulation
 }
 
