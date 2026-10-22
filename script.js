@@ -1,4 +1,4 @@
-// Every stamp uses simple SVG paths so the artwork stays sharp at any size.
+
 const designs = [
   { name: 'Paris', art: '<path d="M32 76h36M36 71h28M44 51h12M48 22h4l3 29 10 25H35l10-25zM41 63h18M49 13v9M43 76l7-13 7 13"/><text x="50" y="91" text-anchor="middle" stroke="none" fill="currentColor" font-family="Georgia" font-size="9" letter-spacing="2">PARIS</text>' },
   { name: 'New York', art: '<circle cx="50" cy="50" r="39"/><circle cx="50" cy="50" r="34"/><path d="M30 69V46h11v23m0 0V34h17v35m0 0V43h12v26M25 69h50M49 22v12M45 29h9M46 42h7m-7 7h7m-7 7h7"/><text x="50" y="82" text-anchor="middle" stroke="none" fill="currentColor" font-size="7" letter-spacing="1">NEW YORK</text>' },
