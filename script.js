@@ -65,10 +65,7 @@ garden.addEventListener('click', function (event) {
   stamps.appendChild(stamp);
   updateCount();
 });
-undoButton.addEventListener('click', function () {
-  if (stamps.lastElementChild) stamps.lastElementChild.remove();
-  updateCount();
-});
+
 clearButton.addEventListener('click', function () {
   stamps.replaceChildren();
   updateCount();
