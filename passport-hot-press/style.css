@@ -1,0 +1,399 @@
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    background: #ff809b;
+    color: #dbb15b;
+    font-family: Arial, sans-serif;
+    padding: 20px 5vw 12px
+}
+
+.passport {
+    max-width: 1500px;
+    min-height: 720px;
+    height: calc(100svh - 64px);
+    margin: auto;
+    display: grid;
+    grid-template-columns: 46% 10% 44%;
+    border: 1px solid #350900;
+    background: #ae0027;
+    box-shadow: 0 12px 35px #8e23301a
+}
+
+.left {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden
+}
+
+.card {
+    position: absolute;
+    top: 4.5%;
+    left: 24%;
+    width: 52%;
+    height: 13%;
+    background: #ddb256;
+    border-radius: 22px 22px 0 0;
+    z-index: -2
+}
+
+.slots {
+    position: absolute;
+    top: 10%;
+    left: 17%;
+    right: 17%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #ae0027;
+    z-index: -1
+}
+
+.slots i {
+    height: 1px;
+    background: #280900;
+    position: relative
+}
+
+.slots i:before,
+.slots i:after {
+    content: '';
+    position: absolute;
+    background: #130b02;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    top: -7px
+}
+
+.slots i:before {
+    left: -7px
+}
+
+.slots i:after {
+    right: -7px
+}
+
+.identity {
+    position: absolute;
+    top: 42%;
+    width: 100%;
+    text-align: center
+}
+
+.identity h1 {
+    font-family: 'Times New Roman', Times, serif;
+    font: normal clamp(40px, 5vw, 70px);
+    margin: 0 0 17px
+}
+
+.identity p {
+    font-size: clamp(12px, 1.15vw, 18px);
+    line-height: 1.4;
+    margin: 0
+}
+
+.pocket {
+    position: absolute;
+    inset: 57% 0 0;
+    background: #4b2100;
+    clip-path: polygon(0 0, 50% 34%, 100% 0, 100% 100%, 0 100%);
+    z-index: -1
+}
+
+.tools {
+    position: absolute;
+    bottom: 4%;
+    left: 12%;
+    right: 12%
+}
+
+.eyebrow {
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.choices {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 22px
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+    color: inherit
+}
+
+.choices button {
+    background: transparent;
+    border: 0.7px solid #b58d4844;
+    height: 58px;
+    border-radius: 0px;
+    padding: 8px
+}
+
+.choices button:hover {
+    background: #dcb55d17
+}
+
+.choices button[aria-pressed=true] {
+    border-color: #e3bd6c;
+    background: #ddb25615
+}
+
+.choices svg {
+    height: 100%;
+    width: 100%;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px
+}
+
+.actions button {
+    background: none;
+    border: 0;
+    padding: 5px 0;
+    font-size: 9px;
+    letter-spacing: 1.4px
+}
+
+.actions button:disabled {
+    opacity: .35;
+    cursor: default
+}
+
+.spine {
+    border-left: 1px solid #370500;
+    border-right: 1px solid #370500;
+    box-shadow: inset 6px 0 12px #41001116, inset -6px 0 12px #41001116
+}
+
+#garden {
+    position: relative;
+    overflow: hidden;
+    cursor: crosshair;
+    touch-action: manipulation
+}
+
+.page-top,
+.page-bottom {
+    position: absolute;
+    left: 7%;
+    right: 7%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 8px;
+    letter-spacing: 1.2px;
+    pointer-events: none;
+    opacity: .65
+}
+
+.page-top {
+    top: 4%
+}
+
+.page-bottom {
+    bottom: 4%
+}
+
+#hint {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    color: #dcad6090;
+    text-align: center
+}
+
+#hint span {
+    font: 50px Georgia
+}
+
+#hint p {
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin: 22px 0 10px
+}
+
+#hint small {
+    font-size: 10px;
+    opacity: .7
+}
+
+#hint.hidden {
+    display: none
+}
+
+#stamps {
+    position: absolute;
+    inset: 0;
+    pointer-events: none
+}
+
+.stamp {
+    position: absolute;
+    transform: translate(-50%, -50%) rotate(var(--angle));
+    height: auto;
+    aspect-ratio: 1
+}
+
+.stamp svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    fill: none;
+    stroke: url(#foil);
+    stroke-width: 1.8;
+    filter: drop-shadow(0 -1px 0 #5b1223) drop-shadow(0 1px 0 #fbd58b99)
+}
+
+footer {
+    font-family: 'Times New Roman', Times, serif;
+    max-width: 1500px;
+    margin: 12px auto 0;
+    font-size: 10px;
+    letter-spacing: 1.2px;
+    color: #67172b;
+    display: flex;
+    justify-content: space-between
+}
+
+button:focus-visible {
+    outline: 2px solid #fff0ac;
+    outline-offset: 3px
+}
+
+@media(max-width:700px) {
+    body {
+        padding: 14px
+    }
+
+    .passport {
+        height: auto;
+        min-height: 0;
+        grid-template-columns: 1fr 14px 1.2fr
+    }
+
+    .left {
+        min-height: 690px
+    }
+
+    .tools {
+        left: 10%;
+        right: 10%
+    }
+
+    .choices {
+        grid-template-columns: repeat(2, 1fr)
+    }
+
+    .choices button {
+        height: 48px
+    }
+
+    .identity {
+        top: 35%
+    }
+
+    .identity p {
+        font-size: 10px
+    }
+
+    .slots {
+        height: 22%
+    }
+
+    .pocket {
+        top: 47%;
+        clip-path: polygon(0 0, 50% 14%, 100% 0, 100% 100%, 0 100%)
+    }
+
+    .page-top {
+        font-size: 7px;
+        gap: 12px
+    }
+
+    .page-top span:first-child {
+        max-width: 95px
+    }
+
+    .page-bottom {
+        font-size: 6px
+    }
+
+    #hint {
+        padding: 14px
+    }
+
+    #hint p {
+        font-size: 9px;
+        line-height: 1.6
+    }
+
+    #hint small {
+        line-height: 1.6
+    }
+
+    footer {
+        font-size: 6px;
+        gap: 15px
+    }
+}
+
+.choices {
+    max-height: 155px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #b58d48 transparent;
+    padding-right: 5px;
+    margin-bottom: 8px
+}
+
+.choices button {
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 6px
+}
+
+.choices svg {
+    height: 44px;
+    flex-shrink: 0
+}
+
+.choice-name {
+    font-size: 7px;
+    letter-spacing: .6px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+@media(max-width:700px) {
+    .choices {
+        max-height: 170px
+    }
+
+    .choices button {
+        height: 70px
+    }
+
+    .choices svg {
+        height: 44px
+    }
+}
